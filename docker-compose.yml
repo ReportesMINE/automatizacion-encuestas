@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  automated-flow:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+    stdin_open: true   # habilita entrada de usuario
+    tty: true          # permite modo interactivo como en bash
+    container_name: automated-flow
+    command: bash scripts/run.sh
